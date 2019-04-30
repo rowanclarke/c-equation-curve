@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
 		for (j = 0; j < i; j++) {
 			sub += coef(n-i, n-j-1) * equ[j];
 		}
-		equ[i] = (diff[n-i-1][1] - sub) / coef(n-i, n-i-1) ;
+		equ[i] = (diff[n-i-1][1] - sub) / coef(n-i, n-i-1);
 		
 	}
 	
@@ -37,10 +37,10 @@ int main(int argc, char** argv) {
 
 int pascal(int pos, int rows) {
 	int a = 1, i;
-    for(i = 0; i <= rows-1; i++) {
-        a = (i == 0) ? 1 : a * (rows-i) / i;
-        if (pos == i) return a;
-    }
+	for(i = 0; i <= rows-1; i++) {
+		a = (i == 0) ? 1 : a * (rows-i) / i;
+		if (pos == i) return a;
+	}
 }
 
 int coef(int pos, int power) {
@@ -54,6 +54,7 @@ int coef(int pos, int power) {
 	}
 	return sum;
 }
+
 
 void format(int* equ, int len) {
 	int i;
