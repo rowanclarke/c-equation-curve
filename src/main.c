@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <math.h>
 
+int pascal(int pos, int rows);
+int coef(int pos, int power);
+void format(int* equ, int len);
+
 int main(int argc, char** argv) {
 	int n, i, j;
 	printf("Inputs: ");
@@ -41,13 +45,13 @@ int pascal(int pos, int rows) {
 		a = (i == 0) ? 1 : a * (rows-i) / i;
 		if (pos == i) return a;
 	}
+    return a;
 }
 
 int coef(int pos, int power) {
 	int i, p[pos];
 	int sum = 0; 
 	int mult = 1;
-	pascal(p, pos);
 	for (i = pos; i > 0; i--) {		
 		sum += mult * pascal(pos - i, pos) * pow(i, power);
 		mult *= -1;
@@ -74,5 +78,5 @@ void format(int* equ, int len) {
 			}
 		}
 		if (i != len-1) printf(" + ");
-	}
+    }
 }
