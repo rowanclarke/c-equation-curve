@@ -50,6 +50,7 @@ int coef(int pos, int power) {
 
 void format(int* equ, int len) {
 	int i;
+	printf("f(x) = ");
 	for (i = 0; i < len; i++) {
 		int p = len-i-1;
 		int power = (p < 2) ? p : 2;
@@ -63,7 +64,7 @@ void format(int* equ, int len) {
 				if (coef == 1) printf("x^%d", p);
 				else printf("%dx^%d", *(equ+i), p);
 			}
+			if (i != len-1) printf(" + ");
 		}
-		if (i != len-1) printf(" + ");
    	}
 }
